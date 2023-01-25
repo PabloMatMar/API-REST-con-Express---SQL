@@ -1,6 +1,5 @@
 const express = require('express');
 const morgan = require('morgan');
-// require('dotenv').config()
 
 // Módulos de Rutas
 const entriesApiRoutes = require('./routes/entriesApiRoutes');
