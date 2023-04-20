@@ -1,5 +1,4 @@
 const { Pool } = require('pg');
-// const queries = require('./queries')
 const key = require('../utils/db_pgsql.js')
 const pool = new Pool({
     host: 'localhost',

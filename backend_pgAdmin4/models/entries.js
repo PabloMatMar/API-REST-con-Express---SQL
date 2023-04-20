@@ -1,12 +1,12 @@
 const { Pool } = require('pg');
-const queries = require('./queries')
-const key = require('../utils/db_pgsql.js')
+const queries = require('./queries');
+const key = require('../utils/db_pgsql.js');
 const pool = new Pool({
     host: 'localhost',
     user: 'postgres',
     database: 'postgres',
     password: key
-})
+});
 
 
 //RUTAS ENTRIES
@@ -23,8 +23,8 @@ const getEntriesByEmail = async (email) => {
     } finally {
         client.release();
     }
-    return result
-}
+    return result;
+};
 
 // GET
 const getAllEntries = async () => {
@@ -39,8 +39,8 @@ const getAllEntries = async () => {
     } finally {
         client.release();
     }
-    return result
-}
+    return result;
+};
 
 // CREATE
 const createEntry = async (entry) => {
@@ -56,8 +56,8 @@ const createEntry = async (entry) => {
     } finally {
         client.release();
     }
-    return result
-}
+    return result;
+};
 
 // DELETE 
 const deleteEntry = async (title) => {
@@ -72,10 +72,10 @@ const deleteEntry = async (title) => {
     } finally {
         client.release();
     }
-    return result
-}
-//UPDATE
+    return result;
+};
 
+//UPDATE
 const updateEntry = async (entry, oldtitle) => {
     const { title, content, date, category } = entry;
     let client, result;
@@ -89,11 +89,8 @@ const updateEntry = async (entry, oldtitle) => {
     } finally {
         client.release();
     }
-    return result
-}
-
-
-
+    return result;
+};
 
 const entries = {
     getEntriesByEmail,
@@ -101,31 +98,6 @@ const entries = {
     createEntry,
     deleteEntry,
     updateEntry
-}
+};
 
 module.exports = entries;
-
-
-// Pruebas
-/*
-    getEntriesByEmail("birja@thebridgeschool.es")
-    .then(data=>console.log(data))
-*/
-
-/*
-getAllEntries()
-.then(data=>console.log(data))
-*/
-
-/*
-let newEntry = {
-    title: "Se acabaron las mandarinas de TB",
-    content: "Corren rumores de que papa noel tenía un saco vacio y lo llenó",
-    email: "guillermu@thebridgeschool.es",
-    category: "sucesos"
-}
-
-createEntry(newEntry)
-    .then(data => console.log(data))
-    */
-
