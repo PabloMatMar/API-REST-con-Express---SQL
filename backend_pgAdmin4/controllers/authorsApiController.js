@@ -19,9 +19,9 @@ const getAllAuthors = async (req, res) => {
 // POST http://localhost:3000/api/authors
 // {
 //     "id_author": 200,
-//     "name": "Abilio",
-//     "surname": "papa",
-//     "email": "EnElCielo@gmail.es",
+//     "name": "Nuevo Usuario",
+//     "surname": "Creado con ruta POST",
+//     "email": "backend@gmail.es",
 //     "image": "https://randomuser.me/api/portraits/thumb/men/75.jpg"
 // }
 
@@ -39,10 +39,10 @@ const createAuthor = async (req, res) => {
 // PUT http://localhost:3000/api/authors
 //OBJETO PARA HACER LA PRUEBA PAR ACTUALIZAR
 // {
-//     "key": "Pabloperdioelemail@thebridgeschool.es"
+//     "key": "ParaActualizar@gmail.es",
 //     "id_author": 2,
 //     "name": "Para Actualizar",
-//     "surname": "actualizado",
+//     "surname": "El aprendizaje siempre requiere actualizacion",
 //     "email": "ParaActualizar@gmail.es",
 //     "image": "https://randomuser.me/api/portraits/thumb/men/75.jpg"
 // }
