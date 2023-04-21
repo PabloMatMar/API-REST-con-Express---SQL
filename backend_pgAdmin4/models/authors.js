@@ -1,16 +1,15 @@
 const { Pool } = require('pg');
-const queries = require('./queries')
-const key = require('../utils/db_pgsql.js')
+const queries = require('./queries');
+const key = require('../utils/db_pgsql.js');
 const pool = new Pool({
     host: 'localhost',
     user: 'postgres',
     database: 'postgres',
     password: key
-})
+});
 
 //RUTAS AUTHORS
 //GET ALL ATHORS
-
 const getAllAuthors = async () => {
     let client, result;
     try {
@@ -23,11 +22,10 @@ const getAllAuthors = async () => {
     } finally {
         client.release();
     }
-    return result
-}
+    return result;
+};
 
 //GET del autor por email
-
 const getAuthorsByEmail = async (email) => {
     let client, result;
     try {
@@ -40,11 +38,10 @@ const getAuthorsByEmail = async (email) => {
     } finally {
         client.release();
     }
-    return result
-}
+    return result;
+};
 
 // Postear un autor
-
 const createAuthor = async (newAuthor) => {
     const { id_author, name, surname, email, image } = newAuthor;
     let client, result;
@@ -58,8 +55,8 @@ const createAuthor = async (newAuthor) => {
     } finally {
         client.release();
     }
-    return result
-}
+    return result;
+};
 
 //Actualizar un autor
 const updateAuthor = async (author, key) => {
@@ -75,8 +72,8 @@ const updateAuthor = async (author, key) => {
     } finally {
         client.release();
     }
-    return result
-}
+    return result;
+};
 
 // DELETE 
 const deleteAuthor = async (email) => {
@@ -93,8 +90,8 @@ const deleteAuthor = async (email) => {
     } finally {
         client.release();
     }
-    return result
-}
+    return result;
+};
 
 const authors = {
     getAllAuthors,

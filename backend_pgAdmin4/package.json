@@ -11,14 +11,12 @@
   "author": "Alejandro Reyes",
   "license": "ISC",
   "dependencies": {
-    "cowsay": "^1.5.0",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "mongoose": "^6.8.4",
     "morgan": "^1.10.0",
     "node-fetch": "^2.6.7",
-    "pg": "^8.8.0",
-    "pug": "^3.0.2"
+    "pg": "^8.8.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
